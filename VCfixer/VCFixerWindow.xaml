@@ -1,0 +1,85 @@
+﻿<Window
+    x:Class="VCfixer.VCFixerWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:VCfixer"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="VCFixer v.1.4.0"
+    Width="450"
+    Height="410"
+    mc:Ignorable="d">
+    <Grid>
+        <StackPanel Margin="5">
+            <Label Margin="2" Content="Vowels (separate by commas):" />
+            <TextBox
+                Name="TextboxVowels"
+                Margin="2"
+                Text="a,e,i,o,u,y" />
+            <Label Margin="2" Content="Velocity:" />
+            <TextBox
+                Name="TextboxVelocity"
+                Margin="2"
+                Text="1.0"
+                ToolTip="from 0 to 1 makes notes larger, from 1 makes them shorter." />
+            <Label Margin="2" Content="Prefixes (separate by commas):" />
+            <TextBox
+                Name="TextboxPrefixes"
+                Margin="2"
+                Text="0_,1_"
+                ToolTip="Prefixes that may be found in the region" />
+            <Label Margin="2" Content="Suffixes (separate by commas):" />
+            <TextBox
+                Name="TextboxSuffixes"
+                Margin="2"
+                Text="_N,_S,_P"
+                ToolTip="Suffixes that may be found in the region" />
+            <Label Margin="2" Content="Prefix order:" />
+            <StackPanel Orientation="Horizontal">
+                <RadioButton
+                    Name="radiobuttonPrefixOrderAP"
+                    Margin="3"
+                    Content="append, pitch, ..."
+                    GroupName="radiobuttonPrefixOrder"
+                    IsChecked="False" />
+                <RadioButton
+                    Name="radiobuttonPrefixOrderPA"
+                    Margin="3"
+                    Content="pitch, append, ..."
+                    GroupName="radiobuttonPrefixOrder"
+                    IsChecked="True" />
+            </StackPanel>
+            <Label Margin="2" Content="Suffix order:" />
+            <StackPanel Orientation="Horizontal">
+                <RadioButton
+                    Name="radiobuttonSuffixOrderAP"
+                    Margin="3"
+                    Content="..., append, pitch"
+                    GroupName="radiobuttonSuffixOrder"
+                    IsChecked="True" />
+                <RadioButton
+                    Name="radiobuttonSuffixOrderPA"
+                    Margin="3"
+                    Content="..., pitch, append"
+                    GroupName="radiobuttonSuffixOrder"
+                    IsChecked="False" />
+            </StackPanel>
+            <Grid Margin="0,15,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50*" />
+                    <ColumnDefinition Width="50*" />
+                </Grid.ColumnDefinitions>
+                <Button
+                    Grid.Column="0"
+                    Margin="5"
+                    Click="ButtonFix_Click"
+                    Content="Fix VC by oto.ini" />
+                <Button
+                    Grid.Column="1"
+                    Margin="5"
+                    Click="ButtonCancel_Click"
+                    Content="Cancel" />
+            </Grid>
+        </StackPanel>
+    </Grid>
+</Window>

@@ -54,7 +54,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="MainWindow.xaml">
+    <Compile Include="MusicMath.cs" />
+    <Compile Include="Oto.cs" />
+    <Compile Include="Pitchmap.cs" />
+    <Compile Include="Singer.cs" />
+    <Compile Include="UNote.cs" />
+    <Compile Include="Ust.cs" />
+    <Compile Include="Wav.cs" />
+    <Page Include="VCFixerWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -62,8 +69,8 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
+    <Compile Include="VCFixerWindow.xaml.cs">
+      <DependentUpon>VCFixerWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
